@@ -14,6 +14,9 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { ProductsComponent } from './pages/admin/products/products.component';
 import { NoPageComponent } from './pages/no-page/no-page.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { BannerComponent } from './components/banner/banner.component';
     DashboardComponent,
     ProductsComponent,
     NoPageComponent,
-    BannerComponent
+    BannerComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

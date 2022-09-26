@@ -20,7 +20,6 @@ const routes: Routes = [
       { path: 'about', component: AboutComponent },
     ]
   },
-  { path: '**', component: NoPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   {
@@ -30,7 +29,7 @@ const routes: Routes = [
       { path: 'products', component: AProductsComponent }
     ]
   },
-
+  { path: '**', component: NoPageComponent },
 ];
 
 @NgModule({

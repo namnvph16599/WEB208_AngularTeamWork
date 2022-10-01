@@ -11,20 +11,9 @@ export class BannerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  imageObject: Array<object> = [{
-    image: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_4.jpg?1663857245989',
-    thumbImage: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_4.jpg?1663857245989',
-  }, {
-    image: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_3.jpg?1663857245989', // Support base64 image
-    thumbImage: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_3.jpg?1663857245989', // Support base64 image
-  }, {
-    image: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_4.jpg?1663857245989',
-    thumbImage: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_4.jpg?1663857245989',
-  }, {
-    image: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_3.jpg?1663857245989', // Support base64 image
-    thumbImage: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_3.jpg?1663857245989', // Support base64 image
-  },
-  ];
-
+  images = [
+    { path: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_4.jpg?1663857245989' },
+    { path: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_3.jpg?1663857245989' },
+    { path: 'https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/slider_4.jpg?1663857245989' },
+  ]
 }

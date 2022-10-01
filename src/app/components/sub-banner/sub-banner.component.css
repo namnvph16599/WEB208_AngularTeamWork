@@ -1,0 +1,13 @@
+.img-div .image-popup {
+  margin: 0 !important;
+}
+.ng-image-slider {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 600px !important;
+}
+
+.ng-image-slider .ng-image-slider-container .main {
+  height: 600px !important;
+}

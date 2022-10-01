@@ -1,4 +1,10 @@
-<div class="z-0 relative pb-8">
-    <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1"
-        [imageSize]="{width: '40%', height: 400}" slideImage="1"></ng-image-slider>
-</div>
+<swiper [slidesPerView]="1" [spaceBetween]="30" [loop]="true" [pagination]="{clickable: true}" [navigation]="true" class="mySwiper">
+  <ng-template swiperSlide><img
+      src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_5.jpg?1664614031289" alt=""></ng-template>
+  <ng-template swiperSlide><img
+      src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_1.jpg?1664614031289" alt=""></ng-template>
+  <ng-template swiperSlide><img
+      src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_2.jpg?1664614031289" alt=""></ng-template>
+  <ng-template swiperSlide><img
+      src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_4.jpg?1664614031289" alt=""></ng-template>
+</swiper>

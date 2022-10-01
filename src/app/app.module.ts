@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,14 +38,15 @@ import { SubBannerComponent } from './components/sub-banner/sub-banner.component
     BannerComponent,
     HeaderComponent,
     FooterComponent,
-    SubBannerComponent
+    SubBannerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgImageSliderModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    SwiperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

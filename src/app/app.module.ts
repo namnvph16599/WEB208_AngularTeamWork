@@ -18,6 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { SubBannerComponent } from './components/sub-banner/sub-banner.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,15 @@ import { NgImageSliderModule } from 'ng-image-slider';
     NoPageComponent,
     BannerComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SubBannerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

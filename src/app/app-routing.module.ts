@@ -3,8 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { AboutComponent } from './pages/about/about.component';
+import { BannerComponent } from './pages/admin/banner/banner.component';
+import { CategoryComponent } from './pages/admin/category/category.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ProductsComponent as AProductsComponent } from './pages/admin/products/products.component';
+import { UsersComponent } from './pages/admin/users/users.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -27,7 +30,10 @@ const routes: Routes = [
     path: 'admin', component: AdminLayoutComponent, canActivate: [AuthorticateGuard], children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'products', component: AProductsComponent }
+      { path: 'products', component: AProductsComponent },
+      { path: 'category', component: CategoryComponent },
+      { path: 'banner', component: BannerComponent },
+      { path: 'users', component: UsersComponent },
     ]
   },
   { path: '**', component: NoPageComponent },

@@ -13,7 +13,7 @@ export class AuthorticateGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     //TODO :  handle check role admin
-    const roleAdmin = true  
+    const roleAdmin = true
     if (roleAdmin) {
       return true
     } else {

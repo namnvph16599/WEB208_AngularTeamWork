@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SubBannerComponent } from './components/sub-banner/sub-banner.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SubBannerComponent } from './components/sub-banner/sub-banner.component
     HeaderComponent,
     FooterComponent,
     SubBannerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

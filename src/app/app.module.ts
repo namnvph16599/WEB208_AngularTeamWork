@@ -22,6 +22,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SubBannerComponent } from './components/sub-banner/sub-banner.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CategoryComponent } from './pages/admin/category/category.component';
+import { UsersComponent } from './pages/admin/users/users.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HeaderComponent,
     FooterComponent,
     SubBannerComponent,
-    NavbarComponent
+    NavbarComponent,
+    CategoryComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

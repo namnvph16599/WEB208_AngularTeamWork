@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SubBannerComponent } from './components/sub-banner/sub-banner.component';
+import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
 import { UsersComponent } from './pages/admin/users/users.component';
@@ -42,6 +43,7 @@ import { UsersComponent } from './pages/admin/users/users.component';
     HeaderComponent,
     FooterComponent,
     SubBannerComponent,
+    DetailProductComponent,
     NavbarComponent,
     CategoryComponent,
     UsersComponent

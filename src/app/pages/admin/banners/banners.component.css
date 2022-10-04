@@ -1,0 +1,10 @@
+#toast-rm-success,
+#toast-rm-danger,
+#toast-update-success,
+#toast-update-danger {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 300px;
+  height: 64px;
+}

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { AboutComponent } from './pages/about/about.component';
+import { BannerAddComponent as ABannerAddComponent } from './pages/admin/banner-add/banner-add.component';
 import { BannersComponent as ABannersComponent } from './pages/admin/banners/banners.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'products', component: AProductsComponent },
       { path: 'category', component: CategoryComponent },
       { path: 'banner', component: ABannersComponent },
+      { path: 'banner/add', component: ABannerAddComponent },
       { path: 'users', component: UsersComponent },
     ]
   },

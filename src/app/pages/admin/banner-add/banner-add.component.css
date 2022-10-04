@@ -1,0 +1,23 @@
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 10px solid #42a948; /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 10px solid #a94442; /* red */
+}
+p {
+  color: red;
+  padding-top: 4px;
+}
+#addBanner:disabled {
+  cursor: no-drop;
+}
+
+#toast-rm-danger {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 300px;
+  height: 64px;
+}

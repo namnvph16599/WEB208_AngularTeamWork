@@ -28,6 +28,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
 import { UsersComponent } from './pages/admin/users/users.component';
 import { BannersComponent } from './pages/admin/banners/banners.component';
+import { BannerAddComponent } from './pages/admin/banner-add/banner-add.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { BannersComponent } from './pages/admin/banners/banners.component';
     NavbarComponent,
     CategoryComponent,
     UsersComponent,
-    BannersComponent
+    BannersComponent,
+    BannerAddComponent
   ],
   imports: [
     BrowserModule,

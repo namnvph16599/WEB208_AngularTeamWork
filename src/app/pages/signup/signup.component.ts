@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IUserRegister } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -24,12 +25,8 @@ export class SignupComponent implements OnInit {
     }
   }
   handleRegister(registerForm: any) {
-    const data = registerForm.form.value;
-    console.log('data', data);
-
+    const data: IUserRegister = registerForm.form.value;
     if (data.password !== data.confirmPassword) {
-      console.log('visible');
-
       this.notification = {
         visible: true,
         content: '2 mật khẩu phải giống nhau'
@@ -38,10 +35,9 @@ export class SignupComponent implements OnInit {
     }
 
     this.authService.signup(data).subscribe(response => {
-      localStorage.setItem('users', response)
+      localStorage.setItem('user', JSON.stringify(response))
       this.router.navigateByUrl('/')
     }, error => {
-      console.log(1111, error);
       this.notification = {
         visible: true,
         content: error.error || 'Có lỗi xảy ra'

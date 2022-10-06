@@ -11,9 +11,9 @@
     },
     {
       "email": "user@gmail.com",
-      "password": "$2a$10$S5abivyqkcKZfm436A4h9OcilJgo.ayMFhkWv5krN2qOWtN99WCY6",
+      "password": "$2a$10$VleI2NnqqR/0hdJAHqja1.d1sGzZkrsVUh68jUWjZ81mLEjxZT3qC",
       "lastName": "user",
-      "firstName": "ngô",
+      "firstName": "ngo",
       "confirmPassword": "user@gmail.com",
       "id": 2
     }

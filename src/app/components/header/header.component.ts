@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IUserInfo } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-header',
@@ -18,8 +19,11 @@ export class HeaderComponent implements OnInit {
     }
     this.toggle = !this.toggle;
   }
+  user: IUserInfo | {} = {}
 
   ngOnInit(): void {
+    console.log('111', localStorage.getItem('user'));
+
   }
 
 }

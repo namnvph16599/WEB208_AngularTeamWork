@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -16,14 +21,14 @@ import { ProductsComponent } from './pages/admin/products/products.component';
 import { NoPageComponent } from './pages/no-page/no-page.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
-import { NgImageSliderModule } from 'ng-image-slider';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SubBannerComponent } from './components/sub-banner/sub-banner.component';
+import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
 import { UsersComponent } from './pages/admin/users/users.component';
+import { BannersComponent } from './pages/admin/banners/banners.component';
+import { BannerAddComponent } from './pages/admin/banner-add/banner-add.component';
 
 @NgModule({
   declarations: [
@@ -42,17 +47,20 @@ import { UsersComponent } from './pages/admin/users/users.component';
     HeaderComponent,
     FooterComponent,
     SubBannerComponent,
+    DetailProductComponent,
     NavbarComponent,
     CategoryComponent,
-    UsersComponent
+    UsersComponent,
+    BannersComponent,
+    BannerAddComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
-    NgImageSliderModule,
-    IvyCarouselModule,
     SwiperModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

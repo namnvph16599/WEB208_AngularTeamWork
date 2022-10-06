@@ -1,10 +1,20 @@
-<swiper [slidesPerView]="1" [spaceBetween]="30" [loop]="true" [pagination]="{clickable: true}" [navigation]="true" class="mySwiper">
-  <ng-template swiperSlide><img
-      src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_5.jpg?1664614031289" alt=""></ng-template>
-  <ng-template swiperSlide><img
-      src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_1.jpg?1664614031289" alt=""></ng-template>
-  <ng-template swiperSlide><img
-      src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_2.jpg?1664614031289" alt=""></ng-template>
-  <ng-template swiperSlide><img
-      src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_4.jpg?1664614031289" alt=""></ng-template>
+<swiper [slidesPerView]="1" [spaceBetween]="30" [loop]="true" [pagination]="{clickable: true}" [navigation]="true"
+    class="mySwiper">
+    <!-- <ng-template *ngFor="let banner of bannersActive" swiperSlide>
+        <img [src]="banner.image" title="{{banner.image}}" alt="">
+    </ng-template> -->
+    <ng-container *ngFor="let banner of bannersActive">
+        <ng-template swiperSlide> <img [src]="banner.image" title="{{banner.image}}" alt=""></ng-template>
+    </ng-container>
+    <!-- <ng-template swiperSlide><img
+            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_5.jpg?1664614031289" alt="">
+    </ng-template>
+    <ng-template swiperSlide><img
+            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_1.jpg?1664614031289" alt="">
+    </ng-template> -->
+    <!-- <div class="swiper-wrapper">
+        <div *ngFor="let banner of bannersActive" class="swiper-slide">
+            <img src={{banner.image}} alt="image" class="slide">
+        </div>
+    </div> -->
 </swiper>

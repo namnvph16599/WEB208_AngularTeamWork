@@ -17,3 +17,8 @@ export interface IUserRegister {
     lastName: string,
     role?: number,
 }
+
+export interface IUserLogin {
+    email: string,
+    password: string
+}

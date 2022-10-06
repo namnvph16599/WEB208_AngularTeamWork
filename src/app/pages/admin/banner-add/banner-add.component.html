@@ -1,5 +1,6 @@
 <div class="flex flex-col min-h-screen bg-white w-full relative ">
-    <form class="form-group p-6 w-full sm:p-8 lg:p-10" #bannerForm="ngForm" (ngSubmit)="handleAddBanner(bannerForm)">
+    <form class="form-group p-6 w-full sm:p-8 lg:p-10" id="registerForm" #bannerForm="ngForm"
+        (ngSubmit)="handleAddBanner(bannerForm)">
         <h1 class="mb-3 text-2xl font-bold text-gray-900 lg:text-3xl ">Thêm banner</h1>
         <div class="mb-6">
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">

@@ -1,5 +1,23 @@
 {
-  "users": {},
+  "users": [
+    {
+      "email": "namnvph16599@fpt.edu.vn",
+      "password": "$2a$10$ORTnG8Y3bW0BjsbIgRh8/ObNIKcr27msO0wn.VugJ3jQLMdhuqbjS",
+      "lastName": "Nam",
+      "firstName": "Ngô",
+      "confirmPassword": "namnvph16599@fpt.edu.vn",
+      "id": 1,
+      "role": 1
+    },
+    {
+      "email": "user@gmail.com",
+      "password": "$2a$10$S5abivyqkcKZfm436A4h9OcilJgo.ayMFhkWv5krN2qOWtN99WCY6",
+      "lastName": "user",
+      "firstName": "ngô",
+      "confirmPassword": "user@gmail.com",
+      "id": 2
+    }
+  ],
   "products": {},
   "category": {},
   "banner": [

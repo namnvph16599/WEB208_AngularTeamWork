@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IUserInfo } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+
   constructor() { }
+
   toggle: boolean = false;
   toggleUser: boolean = false;
   search: string = ''
+  user: any = {}
+  isLogged: boolean = false
+  ngOnInit(): void {
+    const userInfo = localStorage.getItem('user')
+    if (userInfo) {
+      this.user = JSON.parse(userInfo)
+      console.log('this.user', this.user);
+
+      this.isLogged = true
+    }
+
+  }
   handleToggle(value?: string) {
     if (value === 'user') {
       this.toggleUser = !this.toggleUser;
@@ -19,7 +34,8 @@ export class HeaderComponent implements OnInit {
     this.toggle = !this.toggle;
   }
 
-  ngOnInit(): void {
-  }
 
+  logout() {
+    localStorage.removeItem('user')
+  }
 }

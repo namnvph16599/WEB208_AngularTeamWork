@@ -10,8 +10,8 @@ p {
   color: red;
   padding-top: 4px;
 }
-button:disabled {
-  cursor: no-drop !important;
+#addBanner:disabled {
+  cursor: no-drop;
 }
 
 #toast-rm-danger {

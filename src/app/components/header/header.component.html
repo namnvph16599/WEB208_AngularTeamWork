@@ -2,7 +2,8 @@
     <nav class="max-w-full mx-auto ml-0 px-36 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 container">
         <div class="container flex flex-wrap justify-between items-center">
             <a href="#" class="flex items-center">
-                <img src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/logo.svg?1664617715574" class="mr-3 h-6 sm:h-10" alt="Flowbite Logo">
+                <img src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/logo.svg?1664617715574"
+                    class="mr-3 h-6 sm:h-10" alt="Flowbite Logo">
                 <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
             </a>
             <button data-collapse-toggle="mobile-menu" type="button"
@@ -92,7 +93,7 @@
                     placeholder="Tìm kiếm...">
             </div>
             <div class="relative md:block">
-                <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row
+                <ul *ngIf="!isLogged" class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row
                  md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800
                   md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
@@ -107,7 +108,7 @@
                     </li>
                 </ul>
                 <!-- ui when logged -->
-                <!-- <div class="flex items-center md:order-2">
+                <div *ngIf="isLogged" class="flex items-center md:order-2">
                     <button type="button" (click)="handleToggle('user')"
                         class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
@@ -121,31 +122,25 @@
                     shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown"
                         style="position: absolute; inset: 34px auto auto auto; margin: 0px; transform: translate3d(0px, 10.4px, 0px);">
                         <div class="py-3 px-4">
-                            <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                            <span class="block text-sm text-gray-900 dark:text-white">{{user.user.firstName + ' ' +
+                                user.user.lastName
+                                }}</span>
                             <span
-                                class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                                class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">{{user.user.email}}</span>
                         </div>
                         <ul class="py-1" aria-labelledby="user-menu-button">
                             <li>
-                                <a href="#"
+                                <a routerLink="/admin" *ngIf="user.user.role"
                                     class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
                             </li>
                             <li>
-                                <a href="#"
-                                    class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-                            </li>
-                            <li>
-                                <a href="#"
+                                <a href="#" (click)="logout()"
                                     class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
                                     out</a>
                             </li>
                         </ul>
                     </div>
-                </div> -->
+                </div>
             </div>
 
         </div>

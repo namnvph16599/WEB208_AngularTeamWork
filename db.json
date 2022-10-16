@@ -1,5 +1,15 @@
 {
-  "users": {},
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$pkqLKEfUetkwk559mx/EJerfp7DASvfDfue4AMyq3L4.P0FW6rK7C",
+      "lastName": "admin",
+      "firstName": "is",
+      "confirmPassword": "admin@gmail.com",
+      "id": 1,
+      "role": 1
+    }
+  ],
   "products": [
     {
       "id": 2,
@@ -14,15 +24,17 @@
       "price": 12345,
       "description": "đẹp",
       "id": 3
+    },
+    {
+      "name": "test",
+      "image": "https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akn5040-vag-6-72739908-9368-41a2-879a-63a69140b3e4.jpg?v=1663550316000",
+      "price": 11111,
+      "description": "11111",
+      "id": 4
     }
   ],
   "category": {},
   "banner": [
-    {
-      "id": 1,
-      "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_5.jpg?1664614031289",
-      "active": true
-    },
     {
       "id": 2,
       "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_1.jpg?1664614031289",

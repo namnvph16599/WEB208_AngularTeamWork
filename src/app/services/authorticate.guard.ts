@@ -13,13 +13,15 @@ export class AuthorticateGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     //TODO :  handle check role admin
-    const roleAdmin = true
-    if (roleAdmin) {
-      return true
-    } else {
-      this.router.navigate(['/'])
-      return false
+    const userInfo = localStorage.getItem('user')
+    if (userInfo) {
+      const { user: { role } } = JSON.parse(userInfo)
+      if (role) {
+        return true
+      }
     }
+    this.router.navigate(['/'])
+    return false
   }
 
 }

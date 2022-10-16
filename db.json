@@ -1,5 +1,15 @@
 {
-  "users": {},
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$pkqLKEfUetkwk559mx/EJerfp7DASvfDfue4AMyq3L4.P0FW6rK7C",
+      "lastName": "admin",
+      "firstName": "is",
+      "confirmPassword": "admin@gmail.com",
+      "id": 1,
+      "role": 1
+    }
+  ],
   "products": [
     {
       "id": 2,
@@ -18,11 +28,6 @@
   ],
   "category": {},
   "banner": [
-    {
-      "id": 1,
-      "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_5.jpg?1664614031289",
-      "active": true
-    },
     {
       "id": 2,
       "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/slider_1.jpg?1664614031289",

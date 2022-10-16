@@ -37,7 +37,7 @@ const routes: Routes = [
       { path: 'edit/:id/product', component: EditProductComponent },
       { path: 'category', component: CategoryComponent },
       { path: 'banner', component: ABannersComponent },
-      { path: 'banner/add', component: ABannerAddComponent },
+      { path: 'banner/add', component: ABannersComponent },
       { path: 'users', component: UsersComponent },
     ]
   },

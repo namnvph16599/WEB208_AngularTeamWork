@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/interfaces/category';
 import { IUserInfo } from 'src/app/interfaces/user';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-header',
@@ -9,19 +11,21 @@ import { IUserInfo } from 'src/app/interfaces/user';
 export class HeaderComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) { }
 
   toggle: boolean = false;
   toggleUser: boolean = false;
   search: string = ''
   user: any = {}
   isLogged: boolean = false
+  categories: Category[] = []
   ngOnInit(): void {
+    this.categoryService.getCategories().subscribe(data => {
+      this.categories = data
+    })
     const userInfo = localStorage.getItem('user')
     if (userInfo) {
       this.user = JSON.parse(userInfo)
-      console.log('this.user', this.user);
-
       this.isLogged = true
     }
 

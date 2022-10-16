@@ -10,26 +10,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./category-edit.component.css']
 })
 export class CategoryEditComponent implements OnInit {
-  name:String = ''
+  name: String = ''
   findCate = {}
-  category:Category = {name:''}
-  id:number = 0
-  constructor(private categoryService:CategoryService,private activatedRoute: ActivatedRoute,private router:Router) { }
+  id: number = 0
+  constructor(private categoryService: CategoryService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
-      this.categoryService.findCategory(this.id).subscribe(data=>{
-        this.name=data.name
+      this.categoryService.getCategory(this.id).subscribe(data => {
+        this.name = data.name
       })
     });
   }
-  onHandleAdd(event:any){
-    this.category = {
-      id:this.id,
-      name:this.name
-    }
-    this.categoryService.updateCategory(this.category).subscribe(data=>{
+  onHandleAdd(event: any) {
+    this.categoryService.update({ id: this.id, name: this.name }).subscribe(data => {
       if (data) {
         this.router.navigate(['admin/category'])
       }

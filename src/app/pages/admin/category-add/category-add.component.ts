@@ -9,18 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./category-add.component.css']
 })
 export class CategoryAddComponent implements OnInit {
-  name:String = ''
-  category:Category = {name:''}
+  name: String = ''
+  category: Category = { name: '' }
 
-  constructor(private categoryService:CategoryService,private router:Router ) { }
+  constructor(private categoryService: CategoryService, private router: Router) { }
 
   ngOnInit(): void {
   }
-  onHandleAdd(event:any){
-    this.category = {
-      name:this.name
-    }
-    this.categoryService.addCategory(this.category).subscribe((data)=>{
+  onHandleAdd(event: any) {
+    console.log('this.name', this.name);
+
+    this.categoryService.create(this.name).subscribe((data) => {
       if (data) {
         this.router.navigate(['admin/category'])
       }

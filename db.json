@@ -1,5 +1,5 @@
 {
-  "users": {},
+  "users": [],
   "products": [
     {
       "id": 2,
@@ -16,7 +16,24 @@
       "id": 3
     }
   ],
-  "category": {},
+  "category": [
+    {
+      "name": "Quần",
+      "id": 2
+    },
+    {
+      "name": "Áo",
+      "id": 3
+    },
+    {
+      "name": "Giày",
+      "id": 4
+    },
+    {
+      "name": "Túi sách",
+      "id": 5
+    }
+  ],
   "banner": [
     {
       "id": 1,

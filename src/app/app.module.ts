@@ -31,6 +31,8 @@ import { BannersComponent } from './pages/admin/banners/banners.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 import { EditProductComponent } from './pages/admin/edit-product/edit-product.component';
 import { environment } from 'src/environments/environment';
+import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -52,10 +54,12 @@ import { environment } from 'src/environments/environment';
     DetailProductComponent,
     NavbarComponent,
     CategoryComponent,
+    CategoryAddComponent,
     UsersComponent,
     BannersComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,

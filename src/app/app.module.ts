@@ -28,6 +28,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
 import { UsersComponent } from './pages/admin/users/users.component';
 import { BannersComponent } from './pages/admin/banners/banners.component';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { EditProductComponent } from './pages/admin/edit-product/edit-product.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { BannersComponent } from './pages/admin/banners/banners.component';
     NavbarComponent,
     CategoryComponent,
     UsersComponent,
-    BannersComponent
+    BannersComponent,
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,7 @@ import { BannersComponent } from './pages/admin/banners/banners.component';
     AppRoutingModule,
     FormsModule,
     SwiperModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

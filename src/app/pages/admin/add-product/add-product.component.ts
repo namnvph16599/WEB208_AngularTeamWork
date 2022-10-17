@@ -25,13 +25,13 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((data: any) => {
       this.category = data;
-    }) 
+    })
   }
 
   onHandleAdd() {
     this.product = {
       name: this.name,
-      image: "https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akn5040-vag-6-72739908-9368-41a2-879a-63a69140b3e4.jpg?v=1663550316000",
+      image: this.image,
       price: this.price,
       categoryId: this.categoryId,
       description: this.description

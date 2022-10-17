@@ -4,7 +4,8 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
-import { BannersComponent as ABannersComponent } from './pages/admin/banners/banners.component';
+import { BannerAddComponent } from './pages/admin/banner-add/banner-add.component';
+import { BannersComponent as ABannersComponent } from './pages/admin/banners/banners.component'
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   {
     path: 'admin', component: AdminLayoutComponent, canActivate: [AuthorticateGuard], children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'products', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'products', component: AProductsComponent },
       { path: 'add/product', component: AddProductComponent },
@@ -43,7 +44,7 @@ const routes: Routes = [
       { path: 'category/add', component: CategoryAddComponent },
       { path: 'category/edit/:id', component: CategoryEditComponent },
       { path: 'banner', component: ABannersComponent },
-      { path: 'banner/add', component: ABannersComponent },
+      { path: 'banner/add', component: BannerAddComponent },
       { path: 'users', component: UsersComponent },
     ]
   },

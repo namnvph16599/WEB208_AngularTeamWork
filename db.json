@@ -26,6 +26,14 @@
       "categoryId": 0,
       "description": "đẹp",
       "id": 1
+    },
+    {
+      "name": "test 1",
+      "image": "https://bizweb.sapocdn.net/thumb/large/100/438/408/products/smm3011-xda-qam4005-den-4.jpg?v=1665997646000",
+      "price": 4,
+      "categoryId": 0,
+      "description": "test",
+      "id": 2
     }
   ],
   "category": [

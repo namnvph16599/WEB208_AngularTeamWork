@@ -16,6 +16,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NoPageComponent } from './pages/no-page/no-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AuthorticateGuard } from './services/authorticate.guard';
 
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'contact', component: ContactsComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'product', component: ProductPageComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

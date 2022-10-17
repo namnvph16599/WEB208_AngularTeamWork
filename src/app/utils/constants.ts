@@ -1,4 +1,4 @@
-const PORT = "http://localhost:3000"
+const PORT = "https://json-server-web208.vercel.app/api/"
 
 export const BANNER_PORT = `${PORT}/banner`;
 export const REGISTER_PORT = `${PORT}/signup`

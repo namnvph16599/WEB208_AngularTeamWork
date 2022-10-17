@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from 'src/app/interfaces/category';
 import { IProduct } from 'src/app/interfaces/product';
+import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -9,10 +11,13 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./edit-product.component.css']
 })
 export class EditProductComponent implements OnInit {
-
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private router: Router) { }
+  category: Category[] = []
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private categoryService: CategoryService, private router: Router) { }
   product!: IProduct;
   ngOnInit(): void {
+    this.categoryService.getCategories().subscribe((data: any) => {
+      this.category = data;
+    }) 
     this.activatedRoute.params.subscribe(params => {
       const id = params['id'];
       if (params) {

@@ -1,0 +1,13 @@
+.product-item a {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.product-item a img {
+  display: block;
+  transition: .3s ease-in-out;
+}
+
+.product-item a:hover img {
+  transform: scale(1.1);
+}

@@ -33,6 +33,7 @@ import { EditProductComponent } from './pages/admin/edit-product/edit-product.co
 import { environment } from 'src/environments/environment';
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { CategoryEditComponent } from './pages/admin/category-edit/category-edit
     BannersComponent,
     AddProductComponent,
     EditProductComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,

@@ -8,29 +8,24 @@
       "confirmPassword": "admin@gmail.com",
       "id": 1,
       "role": 1
+    },
+    {
+      "email": "phuc@gmail.com",
+      "password": "$2a$10$oVV7ApS1B/euOFc/l4REgeFoUFHiFpgLsLCpACCPiph8cKeGZxyvK",
+      "lastName": "Phúc",
+      "firstName": "Nguyễn",
+      "confirmPassword": "12345678",
+      "id": 2
     }
   ],
   "products": [
     {
-      "id": 2,
-      "name": "Product 2",
-      "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/preview-danhmuc__nguyen-gia.png?1664614031289",
+      "name": "Product 1",
+      "image": "https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akn5040-vag-6-72739908-9368-41a2-879a-63a69140b3e4.jpg?v=1663550316000",
       "price": 399,
-      "description": "Hàng siêu xinh, siêu đẹp"
-    },
-    {
-      "name": "mì omachi",
-      "image": "https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akn5040-vag-6-72739908-9368-41a2-879a-63a69140b3e4.jpg?v=1663550316000",
-      "price": 12345,
+      "categoryId": 0,
       "description": "đẹp",
-      "id": 3
-    },
-    {
-      "name": "test",
-      "image": "https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akn5040-vag-6-72739908-9368-41a2-879a-63a69140b3e4.jpg?v=1663550316000",
-      "price": 11111,
-      "description": "11111",
-      "id": 4
+      "id": 1
     }
   ],
   "category": [

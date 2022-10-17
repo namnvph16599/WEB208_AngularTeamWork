@@ -3,13 +3,31 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { AboutComponent } from './pages/about/about.component';
+<<<<<<< HEAD
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { BannersComponent as ABannersComponent } from './pages/admin/banners/banners.component';
+import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
+import { CategoryComponent } from './pages/admin/category/category.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { EditProductComponent } from './pages/admin/edit-product/edit-product.component';
+import { ProductsComponent as AProductsComponent } from './pages/admin/products/products.component';
+import { UsersComponent } from './pages/admin/users/users.component';
+=======
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ProductsComponent as AProductsComponent } from './pages/admin/products/products.component';
+>>>>>>> a048adcdab70cf6e3bb1317a178a59e38fdab7a9
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NoPageComponent } from './pages/no-page/no-page.component';
+<<<<<<< HEAD
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AuthorticateGuard } from './services/authorticate.guard';
+=======
+import { SignupComponent } from './pages/signup/signup.component';
+>>>>>>> a048adcdab70cf6e3bb1317a178a59e38fdab7a9
 
 const routes: Routes = [
   {
@@ -18,6 +36,29 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'contact', component: ContactsComponent },
       { path: 'about', component: AboutComponent },
+<<<<<<< HEAD
+      { path: 'product', component: ProductPageComponent },
+    ]
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  {
+    path: 'admin', component: AdminLayoutComponent, canActivate: [AuthorticateGuard], children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'products', component: AProductsComponent },
+      { path: 'add/product', component: AddProductComponent },
+      { path: 'edit/:id/product', component: EditProductComponent },
+      { path: 'category', component: CategoryComponent },
+      { path: 'category/add', component: CategoryAddComponent },
+      { path: 'category/edit/:id', component: CategoryEditComponent },
+      { path: 'banner', component: ABannersComponent },
+      { path: 'banner/add', component: ABannersComponent },
+      { path: 'users', component: UsersComponent },
+    ]
+  },
+  { path: '**', component: NoPageComponent },
+=======
     ]
   },
   { path: '**', component: NoPageComponent },
@@ -31,6 +72,7 @@ const routes: Routes = [
     ]
   },
 
+>>>>>>> a048adcdab70cf6e3bb1317a178a59e38fdab7a9
 ];
 
 @NgModule({

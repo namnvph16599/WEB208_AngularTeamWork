@@ -1,0 +1,41 @@
+<div class="grow px-4 mt-[40px]">
+  <div>
+    <h3 class="text-2xl mb-6"><b>Thêm mới sản phẩm</b></h3>
+    <form id="Form" method="post" enctype="multipart/form-data">
+      <div class="grid grid-cols-3 gap-8">
+        <div class="container">
+          <label for="" class="form-label">Image: </label>
+          <input name="image" [(ngModel)]="image" type="file" />
+        </div>
+        <div class="col-span-2">
+          <div class="border-b pb-2">Thông tin sản phẩm</div>
+          <div class="flex flex-col mt-4">
+            <label class="mb-2" for="">Name: </label>
+            <input name="name" [(ngModel)]="name" type="text" placeholder="Tên sản phẩm"
+              class="w-full border rounded-lg h-10 px-2">
+          </div>
+          <div class="flex flex-col py-5">
+            <label class="mb-2" for="">Price: </label>
+            <input name="price" [(ngModel)]="price" type="number" placeholder="Giá gốc"
+              class="w-full border rounded-lg h-10 px-2">
+          </div>
+          <div class="flex flex-col pb-5">
+            <label class="mb-2" for="">Danh mục sản phẩm</label>
+            <select
+              class="bg-gray-50 border border-gray-300 w-[525px] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option *ngFor="let item of category" value="{{item.id}}">
+                {{item.name}}
+              </option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label class="mb-2" for="">Description: </label>
+            <textarea name="description" [(ngModel)]="description" class="w-full border rounded-lg px-2"></textarea>
+          </div>
+          <button class="bg-sky-500 py-2 w-[100px] mt-4 rounded-lg" (click)="onHandleAdd()">Thêm
+            mới</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

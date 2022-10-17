@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { IBanner } from "src/app/interfaces/banner";
+import { BannerService } from "src/app/services/banner.service";
+
+// import Swiper core and required modules
+import SwiperCore, { Pagination, Navigation } from "swiper";
+
+// install Swiper modules
+SwiperCore.use([Pagination, Navigation]);
 
 @Component({
   selector: 'app-banner',
@@ -6,10 +14,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-
-  constructor() { }
+  bannersActive: IBanner[] = []
+  constructor(private BannerService: BannerService) { }
 
   ngOnInit(): void {
+    this.BannerService.getBanners().subscribe(banners => {
+      this.bannersActive = banners.filter(banner => banner.active);
+    })
   }
-
 }

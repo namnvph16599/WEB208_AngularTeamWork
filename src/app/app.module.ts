@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -14,6 +20,20 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { ProductsComponent } from './pages/admin/products/products.component';
 import { NoPageComponent } from './pages/no-page/no-page.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SubBannerComponent } from './components/sub-banner/sub-banner.component';
+import { DetailProductComponent } from './pages/detail-product/detail-product.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CategoryComponent } from './pages/admin/category/category.component';
+import { UsersComponent } from './pages/admin/users/users.component';
+import { BannersComponent } from './pages/admin/banners/banners.component';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { EditProductComponent } from './pages/admin/edit-product/edit-product.component';
+import { environment } from 'src/environments/environment';
+import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +48,28 @@ import { BannerComponent } from './components/banner/banner.component';
     DashboardComponent,
     ProductsComponent,
     NoPageComponent,
-    BannerComponent
+    BannerComponent,
+    HeaderComponent,
+    FooterComponent,
+    SubBannerComponent,
+    DetailProductComponent,
+    NavbarComponent,
+    CategoryComponent,
+    CategoryAddComponent,
+    UsersComponent,
+    BannersComponent,
+    AddProductComponent,
+    EditProductComponent,
+    CategoryEditComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CommonModule,
+    AppRoutingModule,
+    FormsModule,
+    SwiperModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,11 +5,10 @@ import { IProduct } from '../interfaces/product';
 import { PRODUCT_PORT } from '../utils/constants';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-  API = `http://localhost:3000/products`
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getProducts(): Observable<IProduct[]> {
     return this.httpClient.get<IProduct[]>(PRODUCT_PORT);
@@ -28,6 +27,9 @@ export class ProductService {
   }
 
   editProduct(product: IProduct): Observable<IProduct> {
-    return this.httpClient.put<IProduct>(`${PRODUCT_PORT}/${product.id}`, product);
+    return this.httpClient.put<IProduct>(
+      `${PRODUCT_PORT}/${product.id}`,
+      product
+    );
   }
 }

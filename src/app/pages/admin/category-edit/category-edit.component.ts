@@ -24,8 +24,6 @@ export class CategoryEditComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['id'];
       this.categoryService.getCategory(this.id).subscribe((data) => {
-        console.log('data', data);
-
         this.name = data.name;
         this.image = data.image;
       });

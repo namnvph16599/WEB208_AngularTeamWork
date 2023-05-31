@@ -27,10 +27,7 @@ export class ProductPageComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       const categoriId = params['category'];
       if (categoriId) {
-        console.log('params', categoriId);
         this.productService.getProductFilter(categoriId).subscribe((pros) => {
-          console.log('pros', pros);
-
           this.products = pros;
         });
         return;

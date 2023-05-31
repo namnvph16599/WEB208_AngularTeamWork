@@ -21,8 +21,6 @@ export class CategoryAddComponent implements OnInit {
 
   ngOnInit(): void {}
   onHandleAdd(event: any) {
-    console.log('this.name', this.name);
-
     this.categoryService
       .create({ name: this.name, image: this.image })
       .subscribe((data) => {

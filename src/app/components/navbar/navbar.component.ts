@@ -13,7 +13,6 @@ export class NavbarComponent implements OnInit {
     const userInfo = localStorage.getItem('user');
     if (userInfo) {
       this.user = JSON.parse(userInfo);
-      console.log('this.user', this.user);
     }
   }
 }

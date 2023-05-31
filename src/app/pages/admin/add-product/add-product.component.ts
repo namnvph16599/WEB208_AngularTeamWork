@@ -28,6 +28,9 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((data: any) => {
       this.category = data;
+      if (data.length > 0) {
+        this.categoryId = this.category[0].id as number;
+      }
     });
   }
 
@@ -46,7 +49,4 @@ export class AddProductComponent implements OnInit {
       }
     });
   }
-}
-function getValueFromSelect(value: any): number {
-  throw new Error('Function not implemented.');
 }

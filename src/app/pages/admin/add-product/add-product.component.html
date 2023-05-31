@@ -32,7 +32,7 @@
             <label class="mb-2" for="">Description: </label>
             <textarea name="description" [(ngModel)]="description" class="w-full border rounded-lg px-2"></textarea>
           </div>
-          <button class="bg-sky-500 py-2 w-[100px] mt-4 rounded-lg" (click)="onHandleAdd()">Thêm
+          <button class="bg-sky-500 py-2 w-[100px] mt-4 rounded-lg disabled:cursor-no-drop" (click)="onHandleAdd()" [disabled]="!name || !image || !price">Thêm
             mới</button>
         </div>
       </div>

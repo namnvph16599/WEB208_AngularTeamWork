@@ -27,6 +27,7 @@ export class CategoryAddComponent implements OnInit {
       .create({ name: this.name, image: this.image })
       .subscribe((data) => {
         if (data) {
+          alert('Thêm thành công!');
           this.router.navigate(['admin/category']);
         }
       });

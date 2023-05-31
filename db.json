@@ -39,18 +39,22 @@
   "category": [
     {
       "name": "Quần",
+      "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_6.svg?1665975441663",
       "id": 2
     },
     {
       "name": "Áo",
+      "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_2.svg?1665975441663",
       "id": 3
     },
     {
       "name": "Giày",
+      "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_10.svg?1665975441663",
       "id": 4
     },
     {
       "name": "Túi sách",
+      "image": "https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_9.svg?1665975441663",
       "id": 5
     }
   ],

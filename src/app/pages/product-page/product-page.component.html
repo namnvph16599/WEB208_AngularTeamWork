@@ -1,85 +1,14 @@
 <div>
   <div class="row">
     <h1 class="text-center text-[#fcaf17] font-semibold text-[24px]">DANH MỤC NỔI BẬT</h1>
-    <div class="grid grid-cols-5 gap-8 mt-[30px]">
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
+    <div class="grid grid-cols-6 gap-8 mt-[30px]">
+      
+      <div  *ngFor="let category of categories" class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
+        <a href="product?category={{category.id}}">
           <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_1.svg?1665975441663"
+            src={{category.image}}
             alt="">
-          <span class="inline-block ml-[10px]">Áo Polo</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_2.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Áo Sơ Mi</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_3.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Váy Đầm</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_4.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Áo Khoác</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_5.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Áo Thun</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_6.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Quần Âu</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_7.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Chân Váy</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_8.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Quần Kaki</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_9.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Phụ Kiện</span>
-        </a>
-      </div>
-      <div class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
-        <a href="#">
-          <img class="inline-block"
-            src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/page_nu_cate_icon_10.svg?1665975441663"
-            alt="">
-          <span class="inline-block ml-[10px]">Quần Jean</span>
+          <span class="inline-block ml-[10px]">{{category.name}}</span>
         </a>
       </div>
     </div>

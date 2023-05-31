@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProduct } from '../interfaces/product';
-import { PRODUCT_PORT } from '../utils/constants';
+import { PRODUCT_PORT, PRODUCT_PORT_BY_CATEGORYID } from '../utils/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +12,12 @@ export class ProductService {
 
   getProducts(): Observable<IProduct[]> {
     return this.httpClient.get<IProduct[]>(PRODUCT_PORT);
+  }
+
+  getProductFilter(categoriId: number): Observable<IProduct[]> {
+    return this.httpClient.get<IProduct[]>(
+      `${PRODUCT_PORT_BY_CATEGORYID}${categoriId}`
+    );
   }
 
   getProduct(id: number): Observable<IProduct> {

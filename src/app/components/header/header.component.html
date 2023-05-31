@@ -42,7 +42,7 @@
               style="position: absolute; inset: 28px auto auto 0px; margin: 0px; transform: translate3d(0px, 10.4px, 0px);">
               <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                 <li *ngFor="let category of categories">
-                  <a href="/product"
+                  <a href="product?category={{category.id}}"
                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{category.name}}</a>
                 </li>
               </ul>
@@ -65,7 +65,8 @@
           </li>
         </ul>
       </div>
-      <div class="relative md:block">
+      <!-- search -->
+      <!-- <div class="relative md:block">
         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +79,7 @@
         <input type="text" id="search-navbar" [(ngModel)]="search"
           class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Tìm kiếm...">
-      </div>
+      </div> -->
       <div class="relative md:block">
         <ul *ngIf="!isLogged" class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row
                  md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800

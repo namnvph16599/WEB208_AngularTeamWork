@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IProduct, Category } from 'src/app/interfaces';
 import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -11,7 +12,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductPageComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
-    private productService: ProductService
+    private productService: ProductService,
+    private route: ActivatedRoute
   ) {}
 
   categories: Category[] = [];
@@ -22,8 +24,20 @@ export class ProductPageComponent implements OnInit {
       this.categories = data;
     });
 
-    this.productService.getProducts().subscribe((pros) => {
-      this.products = pros;
+    this.route.queryParams.subscribe((params) => {
+      const categoriId = params['category'];
+      if (categoriId) {
+        console.log('params', categoriId);
+        this.productService.getProductFilter(categoriId).subscribe((pros) => {
+          console.log('pros', pros);
+
+          this.products = pros;
+        });
+        return;
+      }
+      this.productService.getProducts().subscribe((pros) => {
+        this.products = pros;
+      });
     });
   }
 }

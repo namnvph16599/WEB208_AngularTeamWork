@@ -5,7 +5,7 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { AboutComponent } from './pages/about/about.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 import { BannerAddComponent } from './pages/admin/banner-add/banner-add.component';
-import { BannersComponent as ABannersComponent } from './pages/admin/banners/banners.component'
+import { BannersComponent as ABannersComponent } from './pages/admin/banners/banners.component';
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
@@ -20,21 +20,28 @@ import { NoPageComponent } from './pages/no-page/no-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AuthorticateGuard } from './services/authorticate.guard';
+import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 
 const routes: Routes = [
   {
-    path: '', component: MainLayoutComponent, children: [
+    path: '',
+    component: MainLayoutComponent,
+    children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'contact', component: ContactsComponent },
       { path: 'about', component: AboutComponent },
       { path: 'product', component: ProductPageComponent },
-    ]
+      { path: 'product/:id', component: DetailProductComponent },
+    ],
   },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   {
-    path: 'admin', component: AdminLayoutComponent, canActivate: [AuthorticateGuard], children: [
+    path: 'admin',
+    component: AdminLayoutComponent,
+    canActivate: [AuthorticateGuard],
+    children: [
       { path: '', redirectTo: 'products', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'products', component: AProductsComponent },
@@ -46,13 +53,13 @@ const routes: Routes = [
       { path: 'banner', component: ABannersComponent },
       { path: 'banner/add', component: BannerAddComponent },
       { path: 'users', component: UsersComponent },
-    ]
+    ],
   },
   { path: '**', component: NoPageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

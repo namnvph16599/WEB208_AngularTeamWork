@@ -1,180 +1,192 @@
 <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-    <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+    <div
+        class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
         <div class="flex items-center flex-1 space-x-4">
             <h5>
                 <span class="text-gray-500">Số Banner:</span>
                 <span class="dark:text-white font-bold"> {{banners.length}}</span>
             </h5>
         </div>
-        <a routerLink="add" class="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
-            <button type="button" class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-                <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+        <a routerLink="add"
+            class="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
+            <button type="button"
+                class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path clip-rule="evenodd" fill-rule="evenodd"
+                        d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                 </svg>
                 Thêm banner
             </button>
         </a>
     </div>
-<table class="min-w-max w-full table-auto relative">
-    <thead>
-        <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-            <th class="py-3 px-6 text-left">ID</th>
-            <th class="py-3 px-6 text-left">Image</th>
-            <th class="py-3 px-6 text-center">Active</th>
-            <th class="py-3 px-6 text-center">Actions
-            </th>
-        </tr>
-    </thead>
-    <tbody class="text-gray-600 text-sm font-light">
-        <tr *ngFor="let banner of banners" class="border-b bg-white hover:bg-gray-100">
-            <td class="py-3 px-6 text-left whitespace-nowrap">
-                <div class="flex items-center">
-                    <div class="mr-2">
-                        <span class="font-medium"> {{banner.id}}</span>
+    <table class="min-w-max w-full table-auto relative">
+        <thead>
+            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-6 text-left">ID</th>
+                <th class="py-3 px-6 text-left">Image</th>
+                <th class="py-3 px-6 text-center">Active</th>
+                <th class="py-3 px-6 text-center">Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody class="text-gray-600 text-sm font-light">
+            <tr *ngFor="let banner of banners" class="border-b bg-white hover:bg-gray-100">
+                <td class="py-3 px-6 text-left whitespace-nowrap">
+                    <div class="flex items-center">
+                        <div class="mr-2">
+                            <span class="font-medium"> {{banner.id}}</span>
+                        </div>
                     </div>
-                </div>
-            </td>
-            <td class="py-3 px-6 text-left">
-                <div class="flex items-center">
-                    <div class="mr-2">
-                        <a href={{banner.image}} target="_blank" title="{{banner.image}}">
-                            <img class="w-56 " src={{banner.image}}>
-                        </a>
+                </td>
+                <td class="py-3 px-6 text-left">
+                    <div class="flex items-center">
+                        <div class="mr-2">
+                            <a href={{banner.image}} target="_blank" title="{{banner.image}}">
+                                <img class="w-56 " src={{banner.image}}>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </td>
-            <td class="py-3 px-6 text-center">
-                <label *ngIf="banner.active" for={{banner.id}} class="inline-flex relative items-center cursor-pointer">
-                    <input type="checkbox" value="" (click)="updateBanner(banner)" checked id={{banner.id}}
-                        class="sr-only peer">
-                    <div
-                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
-                    </div>
-                </label>
-                <label *ngIf="!banner.active" for={{banner.id}}
-                    class="inline-flex relative items-center cursor-pointer">
-                    <input type="checkbox" value="" (click)="updateBanner(banner)" id={{banner.id}}
-                        class="sr-only peer">
-                    <div
-                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
-                    </div>
-                </label>
-                <!-- <span *ngIf="banner.active"
+                </td>
+                <td class="py-3 px-6 text-center">
+                    <label *ngIf="banner.active" for={{banner.id}}
+                        class="inline-flex relative items-center cursor-pointer">
+                        <input type="checkbox" value="" (click)="updateBanner(banner)" checked id={{banner.id}}
+                            class="sr-only peer">
+                        <div
+                            class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                        </div>
+                    </label>
+                    <label *ngIf="!banner.active" for={{banner.id}}
+                        class="inline-flex relative items-center cursor-pointer">
+                        <input type="checkbox" value="" (click)="updateBanner(banner)" id={{banner.id}}
+                            class="sr-only peer">
+                        <div
+                            class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                        </div>
+                    </label>
+                    <!-- <span *ngIf="banner.active"
                     class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">True</span>
                 <span *ngIf="!banner.active" class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">False</span> -->
-            </td>
-            <td class="py-3 px-6 text-center">
-                <div class="flex item-center justify-center">
-                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                        <button (click)="removeBanner(banner.id)" class="w-4 h-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
-                                </path>
-                            </svg>
-                        </button>
+                </td>
+                <td class="py-3 px-6 text-center">
+                    <div class="flex item-center justify-center">
+                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                            <button (click)="removeBanner(banner.id)" class="w-4 h-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 
-<div *ngIf="removeSuccess" id="toast-rm-success"
-    class="flex notifition items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow" role="alert">
-    <div class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-green-500 bg-green-100 rounded-lg">
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"></path>
-        </svg>
-        <span class="sr-only">Check icon</span>
+    <div *ngIf="removeSuccess" id="toast-rm-success"
+        class="flex notifition items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow"
+        role="alert">
+        <div
+            class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-green-500 bg-green-100 rounded-lg">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Check icon</span>
+        </div>
+        <div class="ml-3 text-sm font-normal">Xóa thành công</div>
+        <button type="button" (click)="resetStatusRemove()"
+            class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
+            data-dismiss-target="#toast-rm-success" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
     </div>
-    <div class="ml-3 text-sm font-normal">Xóa thành công</div>
-    <button type="button" (click)="resetStatusRemove()"
-        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
-        data-dismiss-target="#toast-rm-success" aria-label="Close">
-        <span class="sr-only">Close</span>
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-        </svg>
-    </button>
-</div>
-<div *ngIf="removeFailed" id="toast-rm-danger"
-    class="flex notifition items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow" role="alert">
-    <div class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-red-500 bg-red-100 rounded-lg">
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-        </svg>
-        <span class="sr-only">Error icon</span>
+    <div *ngIf="removeFailed" id="toast-rm-danger"
+        class="flex notifition items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow"
+        role="alert">
+        <div class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-red-500 bg-red-100 rounded-lg">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Error icon</span>
+        </div>
+        <div class="ml-3 text-sm font-normal">Xóa thất bại !</div>
+        <button type="button" (click)="resetStatusRemove()"
+            class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
+            data-dismiss-target="#toast-rm-danger" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
     </div>
-    <div class="ml-3 text-sm font-normal">Xóa thất bại !</div>
-    <button type="button" (click)="resetStatusRemove()"
-        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
-        data-dismiss-target="#toast-rm-danger" aria-label="Close">
-        <span class="sr-only">Close</span>
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-        </svg>
-    </button>
-</div>
-<div *ngIf="updateSuccess" id="toast-update-success"
-    class="flex notifition items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow" role="alert">
-    <div class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-green-500 bg-green-100 rounded-lg">
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"></path>
-        </svg>
-        <span class="sr-only">Check icon</span>
+    <div *ngIf="updateSuccess" id="toast-update-success"
+        class="flex notifition items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow"
+        role="alert">
+        <div
+            class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-green-500 bg-green-100 rounded-lg">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Check icon</span>
+        </div>
+        <div class="ml-3 text-sm font-normal">Sửa thành công</div>
+        <button type="button" (click)="resetStatusUpdate()"
+            class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
+            data-dismiss-target="#toast-update-success" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
     </div>
-    <div class="ml-3 text-sm font-normal">Sửa thành công</div>
-    <button type="button" (click)="resetStatusUpdate()"
-        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
-        data-dismiss-target="#toast-update-success" aria-label="Close">
-        <span class="sr-only">Close</span>
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-        </svg>
-    </button>
-</div>
-<div *ngIf="updateFailed" id="toast-update-danger"
-    class="flex notifition items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow" role="alert">
-    <div class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-red-500 bg-red-100 rounded-lg">
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-        </svg>
-        <span class="sr-only">Error icon</span>
+    <div *ngIf="updateFailed" id="toast-update-danger"
+        class="flex notifition items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow"
+        role="alert">
+        <div class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-red-500 bg-red-100 rounded-lg">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Error icon</span>
+        </div>
+        <div class="ml-3 text-sm font-normal">Sửa thất bại !</div>
+        <button type="button" (click)="resetStatusUpdate()"
+            class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
+            data-dismiss-target="#toast-update-danger" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
     </div>
-    <div class="ml-3 text-sm font-normal">Sửa thất bại !</div>
-    <button type="button" (click)="resetStatusUpdate()"
-        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
-        data-dismiss-target="#toast-update-danger" aria-label="Close">
-        <span class="sr-only">Close</span>
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-        </svg>
-    </button>
-</div>

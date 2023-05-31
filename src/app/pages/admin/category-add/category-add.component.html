@@ -15,7 +15,7 @@
             <input name="image" [(ngModel)]="image" type="text" placeholder="Ảnh"
               class="w-full border rounded-lg h-10 px-2">
           </div>
-          <button class="bg-sky-500 py-2 w-[100px] mt-4 rounded-lg">Thêm
+          <button class="bg-sky-500 py-2 w-[100px] mt-4 rounded-lg disabled:cursor-no-drop" [disabled]="!name || !image">Thêm
             mới</button>
         </div>
       </div>

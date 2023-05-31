@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/interfaces/category';
+import { IProduct, Category } from 'src/app/interfaces';
 import { CategoryService } from 'src/app/services/category.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-page',
@@ -8,12 +9,21 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./product-page.component.css'],
 })
 export class ProductPageComponent implements OnInit {
-  constructor(private categoryService: CategoryService) {}
+  constructor(
+    private categoryService: CategoryService,
+    private productService: ProductService
+  ) {}
 
   categories: Category[] = [];
+  products: IProduct[] = [];
+
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
+    });
+
+    this.productService.getProducts().subscribe((pros) => {
+      this.products = pros;
     });
   }
 }

@@ -2,12 +2,10 @@
   <div class="row">
     <h1 class="text-center text-[#fcaf17] font-semibold text-[24px]">DANH MỤC NỔI BẬT</h1>
     <div class="grid grid-cols-6 gap-8 mt-[30px]">
-      
-      <div  *ngFor="let category of categories" class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
+
+      <div *ngFor="let category of categories" class="flex justify-center items-center border w-[220px] h-[120px] ml-4">
         <a href="product?category={{category.id}}">
-          <img class="inline-block"
-            src={{category.image}}
-            alt="">
+          <img class="inline-block" src={{category.image}} alt="">
           <span class="inline-block ml-[10px]">{{category.name}}</span>
         </a>
       </div>
@@ -78,174 +76,13 @@
   <div>
     <h1 class="text-center text-[#fcaf17] font-semibold text-[24px] mt-[40px]">ĐỀ XUẤT CHO BẠN</h1>
     <div class="grid grid-cols-5 gap-8 mt-[20px]">
-      <div class="product-item">
-        <a href="#">
-          <img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn3340-dml-cjn3030-cba-5.jpg?v=1664764733000"
-            alt="">
+      <div *ngFor="let p of products" class="product-item">
+        <a href="product/{{p.id}}">
+          <img class="rounded" src={{p.image}} alt="">
         </a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Tay Ngắn Pique Mắt C...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">231.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">289.000đ</span></span>
+        <h3 class="my-2"><a href="#" class="line-clamp-1">{{p.name}}</a></h3>
+        <span class="text-[#000000] text-[16px]">{{p.price}} VNĐ</span>
       </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn5380-xng-3.jpg?v=1661326583000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Airycool Thoáng Mát P...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">239.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">299.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#">
-          <img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn3516-cba0.jpg?v=1665116824000" alt="">
-        </a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Coolmax Lacoste</a></h3>
-        <span class="text-[red] text-[18px] font-bold">279.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">349.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn4396-tra-1-jpeg.jpg?v=1652063010000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Cafe Phối Bo Kiểm Sóa...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">263.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">329.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn3700-vag-5.jpg?v=1663049127000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Cafe Phối Nẹp Siêu Nh...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">263.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">329.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/ao-polo-nuao-polo-nuao-polo-nuapn3724-xng-yody-vn-yody-vn-yody-vn.jpg?v=1655111390000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Coolmax Phối Bo</a></h3>
-        <span class="text-[red] text-[18px] font-bold">279.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">349.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn3706-xa3-1.jpg?v=1664779929000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Pique Mắt Chim Phối B...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">231.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">289.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn5054-tra-qjn3076-den-5.jpg?v=1662534442000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Croptop Pique Mắt Chi...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">231.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">289.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/san5028-den-4-jpeg.jpg?v=1663058267000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Thể Thao Nữ Airycool Phối...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">215.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">269.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn4388-nav-qjn3076-xah-4.jpg?v=1662947528000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Cafe Cổ Trơn Siêu Nhẹ...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">263.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">329.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/acn5010-xat-3.jpg?v=1653096236000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Chống Nắng Airy UV Thoán...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">231.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">289.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn5320-xng.jpg?v=1655450582000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Coolmax Phối Bo Siêu ...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">231.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">399.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/san5002-xng-cvn5162-den-8.jpg?v=1655863568000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Thể Thao Nữ AiryCool Basi...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">231.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">289.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/qjn3076-xah2.jpg?v=1655541430000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Quần Jean Nữ Baggy Co Giãn Cạ...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">367.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">459.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/quan-jeans-nuqjn4014-dam-2-yodyvn.jpg?v=1664955729000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Quần Jean Nữ Dáng Boy Lưng Thấ...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">231.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">289.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn5378-tna-cjn3030-dba-6.jpg?v=1664165980000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Mắt Chim Dáng Suông...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">239.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">299.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bdn5068-tny-4-824bb9cc-fa88-482f-998f-6cf20aac2ee4.jpg?v=1665565705000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Bộ Đồ Nữ Mùa Hè Cotton Compac...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">287.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">359.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/scn5194-den-qan5162-bee-6.jpg?v=1653494092000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Quần Baggy Nữ Lưng Cao Ống Đứ...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">359.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">499.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/qan5092-tit07.jpg?v=1665393454000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Quần Tây Nữ Ống Đứng Công Sở T...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">399.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">499.000đ</span></span>
-      </div>
-      <div class="product-item">
-        <a href="#"><img class="rounded"
-            src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/apn5292-cam-8.jpg?v=1664164406000"
-            alt=""></a>
-        <h3 class="my-2"><a href="#">Áo Polo Nữ Pique Mắt Chim Chấm ...</a></h3>
-        <span class="text-[red] text-[18px] font-bold">239.200đ <span
-            class="text-[#8a8a8f] text-[16px] ml-4 line-through">299.000đ</span></span>
-      </div>
-    </div>
-    <div class="text-center">
-      <button
-        class="text-[20px] text-[#fff] bg-[#fcaf17] px-[100px] py-[6px] mt-[20px] hover:bg-white hover:text-[#fcaf17] hover:border-green-700 rounded">Xem
-        thêm</button>
     </div>
   </div>
 </div>

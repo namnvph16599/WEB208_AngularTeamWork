@@ -16,6 +16,14 @@
       "firstName": "Nguyễn",
       "confirmPassword": "12345678",
       "id": 2
+    },
+    {
+      "email": "nvnam042@gmail.com",
+      "password": "$2a$10$XbSMKJb/TLJKHyC/y.CPSevcERfCrk870xCE2zDy8EBB.tAIh/Z9C",
+      "lastName": "user 1",
+      "firstName": "ngô",
+      "confirmPassword": "nvnam042@gmail.com",
+      "id": 3
     }
   ],
   "products": [

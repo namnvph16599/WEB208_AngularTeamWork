@@ -50,7 +50,7 @@
               <span><b>{{items.price}}</b></span>
             </div>
           </ng-template>
-          <ng-template swiperSlide>
+          <ng-template *ngIf="p.data.length <=4" swiperSlide>
             <div class="product-item">
               <a href="#"><img class="rounded-xl"
                   src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/cvn5224-nan-3.jpg?v=1660785846000"
@@ -59,7 +59,7 @@
               <span><b>399.000đ</b></span>
             </div>
           </ng-template>
-          <ng-template swiperSlide>
+          <ng-template *ngIf="p.data.length <=4" swiperSlide>
             <div class="product-item">
               <a href="#"><img class="rounded-xl"
                   src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/cvn5202-bee-6.jpg?v=1662947663000"
@@ -68,7 +68,7 @@
               <span><b>399.000đ</b></span>
             </div>
           </ng-template>
-          <ng-template swiperSlide>
+          <ng-template *ngIf="p.data.length <=4" swiperSlide>
             <div class="product-item">
               <a href="#"><img class="rounded-xl"
                   src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5068-den-7.jpg?v=1663292126000"
@@ -77,7 +77,7 @@
               <span><b>89.000đ</b></span>
             </div>
           </ng-template>
-          <ng-template swiperSlide>
+          <ng-template *ngIf="p.data.length <=4" swiperSlide>
             <div class="product-item">
               <a href="#"><img class="rounded-xl"
                   src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/smn5260-tra-1.jpg?v=1660711898000"

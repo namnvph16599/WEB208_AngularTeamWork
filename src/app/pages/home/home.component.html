@@ -2,10 +2,7 @@
   <app-banner></app-banner>
   <div class="flex justify-around pb-4 flex-wrap">
     <div class="flex flex-1">
-      <img
-        class="pr-4"
-        src="https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/ser_1.png?1664013466741"
-      />
+      <img class="pr-4" src="https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/ser_1.png?1664013466741" />
       <span class="text-xs font-semibold">
         Miễn phí vận chuyển đơn 0đ
         <span class="text-xs font-semibold text-[#182ccd]">FREESHIP</span> mọi
@@ -13,29 +10,20 @@
       </span>
     </div>
     <div class="flex flex-1">
-      <img
-        class="pr-4"
-        src="https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/ser_2.png?1664013466741"
-      />
+      <img class="pr-4" src="https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/ser_2.png?1664013466741" />
       <span class="text-xs font-semibold">
         Đa dạng hình thức thanh toán Momo, VNPay, COD
       </span>
     </div>
     <div class="flex flex-1">
-      <img
-        class="pr-4"
-        src="https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/ser_3.png?1664013466741"
-      />
+      <img class="pr-4" src="https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/ser_3.png?1664013466741" />
       <span class="text-xs font-semibold">
         Giao hàng nhanh Chỉ từ
         <span class="text-xs font-semibold text-[#182ccd]">2-5 ngày</span>
       </span>
     </div>
     <div class="flex flex-1">
-      <img
-        class="pr-4"
-        src="https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/ser_4.png?1664013466741"
-      />
+      <img class="pr-4" src="https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/ser_4.png?1664013466741" />
       <span class="text-xs font-semibold">
         Miễn phí ĐỔI, TRẢ Trong 15 ngày tại
         <span class="text-xs font-semibold text-[#182ccd]">180+ </span>điểm bán
@@ -43,630 +31,64 @@
     </div>
   </div>
   <div class="">
-    <div class="mt-[60px]">
+    <div *ngFor="let p of products" class="mt-[60px]">
       <div class="flex justify-between mb-4">
         <div class="title-promotion font-bold text-[#11006f]">
-          MUA 1200K GIẢM 200K
+          {{p.categoryName}}
         </div>
         <a href="#" class="text-[#7a7a9d] font-semibold">Xem thêm ></a>
       </div>
-      <div class="grid grid-cols-[190px,auto] gap-8">
+      <div class="grid grid-cols-[auto] gap-8">
         <div>
-          <a href="#"
-            ><img
-              width="190px"
-              src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/preview-danhmuc__nguyen-gia.png?1664614031289"
-              alt=""
-          /></a>
         </div>
-        <swiper
-          [slidesPerView]="5"
-          [spaceBetween]="30"
-          [slidesPerGroup]="5"
-          [loop]="true"
-          [loopFillGroupWithBlank]="true"
-          [navigation]="true"
-        >
-          <ng-template swiperSlide>
+        <swiper [slidesPerView]="5" [spaceBetween]="30" [slidesPerGroup]="5" [loop]="true"
+          [loopFillGroupWithBlank]="true" [navigation]="true">
+          <ng-template *ngFor="let items of p.data" swiperSlide>
             <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akn5040-vag-6-72739908-9368-41a2-879a-63a69140b3e4.jpg?v=1663550316000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo khoác gió nữ 3C Plus Năng Động</a></h3>
-              <span><b>499.000đ</b></span>
+              <a href="product/{{items.id}}"><img class="rounded-xl" src={{items.image}} alt="" /></a>
+              <h3><a href="product/{{items.id}}">{{items.name}}</a></h3>
+              <span><b>{{items.price}}</b></span>
             </div>
           </ng-template>
           <ng-template swiperSlide>
             <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
+              <a href="#"><img class="rounded-xl"
                   src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/cvn5224-nan-3.jpg?v=1660785846000"
-                  alt=""
-              /></a>
+                  alt="" /></a>
               <h3><a href="#">Chân Váy Chữ A Giấu Quần</a></h3>
               <span><b>399.000đ</b></span>
             </div>
           </ng-template>
           <ng-template swiperSlide>
             <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
+              <a href="#"><img class="rounded-xl"
                   src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/cvn5202-bee-6.jpg?v=1662947663000"
-                  alt=""
-              /></a>
+                  alt="" /></a>
               <h3><a href="#">Chân Váy Xếp Ly Ngắn Cạp Liền</a></h3>
               <span><b>399.000đ</b></span>
             </div>
           </ng-template>
           <ng-template swiperSlide>
             <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
+              <a href="#"><img class="rounded-xl"
                   src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5068-den-7.jpg?v=1663292126000"
-                  alt=""
-              /></a>
+                  alt="" /></a>
               <h3><a href="#">Áo Hai Dây Co Giãn Thoáng Mát</a></h3>
               <span><b>89.000đ</b></span>
             </div>
           </ng-template>
           <ng-template swiperSlide>
             <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
+              <a href="#"><img class="rounded-xl"
                   src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/smn5260-tra-1.jpg?v=1660711898000"
-                  alt=""
-              /></a>
+                  alt="" /></a>
               <h3>
                 <a href="#">Áo Sơ Mi Nữ Dáng Suông Nano Giữ Form Ít Nhăn</a>
               </h3>
               <span><b>459.000đ</b></span>
             </div>
           </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5034-nau-7.jpg?v=1664543008000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Hai Dây Nữ Lưng Đan Chéo Trẻ Trung</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5032-nau-4.jpg?v=1664543070000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Hai Dây Nữ Cổ Tròn Len Mềm Mại</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/quan-jean-nu-qjn5094-xah-6-yodyvn.jpg?v=1663311712000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Quần Jeans Nữ Skinny Túi Vuông Ly Mông</a></h3>
-              <span><b>499.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/aln4028-nau-cvn5224-nan-8.jpg?v=1664011369000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Ghi Lê Nữ Dáng Suông Co Giãn Tốt</a></h3>
-              <span><b>349.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/atn5130-nau-30.jpg?v=1663992973000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Thun Nữ Dáng Ôm In Chữ</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akm5037-cam-39.jpg?v=1663550435000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Khoác Gió Nam 3C Plus Năng Động</a></h3>
-              <span><b>499.000đ</b></span>
-            </div>
-          </ng-template>
         </swiper>
-      </div>
-    </div>
-    <div class="mt-[60px]">
-      <div class="flex justify-between mb-4">
-        <div class="title-promotion font-bold text-[#11006f]">
-          COMBO TIẾT KIỆM
-        </div>
-        <a href="#" class="text-[#7a7a9d] font-semibold">Xem thêm ></a>
-      </div>
-      <div class="grid grid-cols-[190px,auto] gap-8">
-        <div>
-          <a href="#"
-            ><img
-              width="190px"
-              src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/preview-danhmuc__combo-tiet-kiem.png?1664614031289"
-              alt=""
-          /></a>
-        </div>
-        <swiper
-          [slidesPerView]="5"
-          [spaceBetween]="30"
-          [slidesPerGroup]="5"
-          [loop]="true"
-          [loopFillGroupWithBlank]="true"
-          [navigation]="true"
-        >
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akn5040-vag-6-72739908-9368-41a2-879a-63a69140b3e4.jpg?v=1663550316000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo khoác gió nữ 3C Plus Năng Động</a></h3>
-              <span><b>499.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/cvn5224-nan-3.jpg?v=1660785846000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Chân Váy Chữ A Giấu Quần</a></h3>
-              <span><b>399.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/cvn5202-bee-6.jpg?v=1662947663000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Chân Váy Xếp Ly Ngắn Cạp Liền</a></h3>
-              <span><b>399.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5068-den-7.jpg?v=1663292126000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Hai Dây Co Giãn Thoáng Mát</a></h3>
-              <span><b>89.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/smn5260-tra-1.jpg?v=1660711898000"
-                  alt=""
-              /></a>
-              <h3>
-                <a href="#">Áo Sơ Mi Nữ Dáng Suông Nano Giữ Form Ít Nhăn</a>
-              </h3>
-              <span><b>459.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5034-nau-7.jpg?v=1664543008000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Hai Dây Nữ Lưng Đan Chéo Trẻ Trung</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5032-nau-4.jpg?v=1664543070000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Hai Dây Nữ Cổ Tròn Len Mềm Mại</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/quan-jean-nu-qjn5094-xah-6-yodyvn.jpg?v=1663311712000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Quần Jeans Nữ Skinny Túi Vuông Ly Mông</a></h3>
-              <span><b>499.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/aln4028-nau-cvn5224-nan-8.jpg?v=1664011369000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Ghi Lê Nữ Dáng Suông Co Giãn Tốt</a></h3>
-              <span><b>349.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/atn5130-nau-30.jpg?v=1663992973000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Thun Nữ Dáng Ôm In Chữ</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akm5037-cam-39.jpg?v=1663550435000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Khoác Gió Nam 3C Plus Năng Động</a></h3>
-              <span><b>499.000đ</b></span>
-            </div>
-          </ng-template>
-        </swiper>
-      </div>
-    </div>
-    <div class="mt-[60px]">
-      <div class="flex justify-between mb-4">
-        <div class="title-promotion font-bold text-[#11006f]">
-          ĐỒNG GIÁ 299K
-        </div>
-        <a href="#" class="text-[#7a7a9d] font-semibold">Xem thêm ></a>
-      </div>
-      <div class="grid grid-cols-[190px,auto] gap-8">
-        <div>
-          <a href="#"
-            ><img
-              width="190px"
-              src="https://bizweb.sapocdn.net/100/438/408/themes/878697/assets/preview-danhmuc__dong-gia-299k.png?1664614031289"
-              alt=""
-          /></a>
-        </div>
-        <swiper
-          [slidesPerView]="5"
-          [spaceBetween]="30"
-          [slidesPerGroup]="5"
-          [loop]="true"
-          [loopFillGroupWithBlank]="true"
-          [navigation]="true"
-        >
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akn5040-vag-6-72739908-9368-41a2-879a-63a69140b3e4.jpg?v=1663550316000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo khoác gió nữ 3C Plus Năng Động</a></h3>
-              <span><b>499.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/cvn5224-nan-3.jpg?v=1660785846000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Chân Váy Chữ A Giấu Quần</a></h3>
-              <span><b>399.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/cvn5202-bee-6.jpg?v=1662947663000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Chân Váy Xếp Ly Ngắn Cạp Liền</a></h3>
-              <span><b>399.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5068-den-7.jpg?v=1663292126000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Hai Dây Co Giãn Thoáng Mát</a></h3>
-              <span><b>89.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/smn5260-tra-1.jpg?v=1660711898000"
-                  alt=""
-              /></a>
-              <h3>
-                <a href="#">Áo Sơ Mi Nữ Dáng Suông Nano Giữ Form Ít Nhăn</a>
-              </h3>
-              <span><b>459.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5034-nau-7.jpg?v=1664543008000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Hai Dây Nữ Lưng Đan Chéo Trẻ Trung</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/bln5032-nau-4.jpg?v=1664543070000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Hai Dây Nữ Cổ Tròn Len Mềm Mại</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/quan-jean-nu-qjn5094-xah-6-yodyvn.jpg?v=1663311712000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Quần Jeans Nữ Skinny Túi Vuông Ly Mông</a></h3>
-              <span><b>499.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/aln4028-nau-cvn5224-nan-8.jpg?v=1664011369000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Ghi Lê Nữ Dáng Suông Co Giãn Tốt</a></h3>
-              <span><b>349.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/atn5130-nau-30.jpg?v=1663992973000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Thun Nữ Dáng Ôm In Chữ</a></h3>
-              <span><b>269.000đ</b></span>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>
-            <div class="product-item">
-              <a href="#"
-                ><img
-                  class="rounded-xl"
-                  src="https://bizweb.sapocdn.net/thumb/large/100/438/408/products/akm5037-cam-39.jpg?v=1663550435000"
-                  alt=""
-              /></a>
-              <h3><a href="#">Áo Khoác Gió Nam 3C Plus Năng Động</a></h3>
-              <span><b>499.000đ</b></span>
-            </div>
-          </ng-template>
-        </swiper>
-      </div>
-    </div>
-    <div class="mt-[60px]">
-      <h1 class="text-center font-bold text-[30px]">BLOG THỜI TRANG</h1>
-      <div class="grid grid-cols-6 gap-8 mt-[35px]">
-        <div class="">
-          <a href="#">
-            <img
-              class="rounded-xl"
-              width="100%"
-              height="298px"
-              src="https://picsum.photos/200"
-              alt="Làm sao để loại bỏ vết bẩn trên những chiếc túi cao cấp?"
-            />
-          </a>
-          <h5 class="mt-3 mb-4">
-            <a href="#" class="text-[16px] font-semibold line-clamp-1"
-              >Làm sao để loại bỏ vết bẩn trên những ...</a
-            >
-          </h5>
-          <p class="text-[14px]">
-            <a href="#" class="text-[12px] font-semibold line-clamp-2"
-              >Sau một năm 2020 đầy biến động, điều mà công chúng cần lúc này là
-              một chút ma thuật đ.</a
-            >
-          </p>
-          <a class="text-[12px] pt-4 font-bold" href="#">Xem thêm ></a>
-        </div>
-        <div class="">
-          <a href="#">
-            <img
-              class="rounded-xl"
-              width="100%"
-              height="298px"
-              src="https://picsum.photos/200"
-              alt="Làm sao để loại bỏ vết bẩn trên những chiếc túi cao cấp?"
-            />
-          </a>
-          <h5 class="mt-3 mb-4">
-            <a href="#" class="text-[16px] font-semibold line-clamp-1"
-              >Làm sao để loại bỏ vết bẩn trên những ...</a
-            >
-          </h5>
-          <p class="text-[14px]">
-            <a href="#" class="text-[12px] font-semibold line-clamp-2"
-              >Sau một năm 2020 đầy biến động, điều mà công chúng cần lúc này là
-              một chút ma thuật đ.</a
-            >
-          </p>
-          <a class="text-[12px] pt-4 font-bold" href="#">Xem thêm ></a>
-        </div>
-        <div class="">
-          <a href="#">
-            <img
-              class="rounded-xl"
-              width="100%"
-              height="298px"
-              src="https://picsum.photos/200"
-              alt="Làm sao để loại bỏ vết bẩn trên những chiếc túi cao cấp?"
-            />
-          </a>
-          <h5 class="mt-3 mb-4">
-            <a href="#" class="text-[16px] font-semibold line-clamp-1"
-              >Làm sao để loại bỏ vết bẩn trên những ...</a
-            >
-          </h5>
-          <p class="text-[14px]">
-            <a href="#" class="text-[12px] font-semibold line-clamp-2"
-              >Sau một năm 2020 đầy biến động, điều mà công chúng cần lúc này là
-              một chút ma thuật đ.</a
-            >
-          </p>
-          <a class="text-[12px] pt-4 font-bold" href="#">Xem thêm ></a>
-        </div>
-        <div class="">
-          <a href="#">
-            <img
-              class="rounded-xl"
-              width="100%"
-              height="298px"
-              src="https://picsum.photos/200"
-              alt="Làm sao để loại bỏ vết bẩn trên những chiếc túi cao cấp?"
-            />
-          </a>
-          <h5 class="mt-3 mb-4">
-            <a href="#" class="text-[16px] font-semibold line-clamp-1"
-              >Làm sao để loại bỏ vết bẩn trên những ...</a
-            >
-          </h5>
-          <p class="text-[14px]">
-            <a href="#" class="text-[12px] font-semibold line-clamp-2"
-              >Sau một năm 2020 đầy biến động, điều mà công chúng cần lúc này là
-              một chút ma thuật đ.</a
-            >
-          </p>
-          <a class="text-[12px] pt-4 font-bold" href="#">Xem thêm ></a>
-        </div>
-        <div class="">
-          <a href="#">
-            <img
-              class="rounded-xl"
-              width="100%"
-              height="298px"
-              src="https://picsum.photos/200"
-              alt="Làm sao để loại bỏ vết bẩn trên những chiếc túi cao cấp?"
-            />
-          </a>
-          <h5 class="mt-3 mb-4">
-            <a href="#" class="text-[16px] font-semibold line-clamp-1"
-              >Làm sao để loại bỏ vết bẩn trên những ...</a
-            >
-          </h5>
-          <p class="text-[14px]">
-            <a href="#" class="text-[12px] font-semibold line-clamp-2"
-              >Sau một năm 2020 đầy biến động, điều mà công chúng cần lúc này là
-              một chút ma thuật đ.</a
-            >
-          </p>
-          <a class="text-[12px] pt-4 font-bold" href="#">Xem thêm ></a>
-        </div>
-        <div class="">
-          <a href="#">
-            <img
-              class="rounded-xl"
-              width="100%"
-              height="298px"
-              src="https://picsum.photos/200"
-              alt="Làm sao để loại bỏ vết bẩn trên những chiếc túi cao cấp?"
-            />
-          </a>
-          <h5 class="mt-3 mb-4">
-            <a href="#" class="text-[16px] font-semibold line-clamp-1"
-              >Làm sao để loại bỏ vết bẩn trên những ...</a
-            >
-          </h5>
-          <p class="text-[14px]">
-            <a href="#" class="text-[12px] font-semibold line-clamp-2"
-              >Sau một năm 2020 đầy biến động, điều mà công chúng cần lúc này là
-              một chút ma thuật đ.</a
-            >
-          </p>
-          <a class="text-[12px] pt-4 font-bold" href="#">Xem thêm ></a>
-        </div>
       </div>
     </div>
   </div>
@@ -674,30 +96,16 @@
     <div class="flex-1">
       <p class="text-lg font-light text-black">ĐĂNG KÝ NHẬN THÔNG TIN MỚI</p>
       <div class="relative pt-2">
-        <div
-          class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
-        >
-          <svg
-            aria-hidden="true"
-            class="w-5 h-5 text-gray-500 dark:text-gray-400"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-            ></path>
-            <path
-              d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-            ></path>
+        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
           </svg>
         </div>
-        <input
-          type="text"
-          id="email-address-icon"
+        <input type="text" id="email-address-icon"
           class="bg-white border border-white-300 text-gray-900 text-sm rounded-lg focus:ring-white-500 focus:border-white-500 block w-96 pl-10 p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-gray dark:focus:ring-blue-500 dark:focus:border-white-500 outline-none"
-          placeholder="name@flowbite.com"
-        />
+          placeholder="name@flowbite.com" />
       </div>
     </div>
   </div>
